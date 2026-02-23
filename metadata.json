@@ -1,0 +1,7 @@
+{
+  "name": "Tier One Creatives",
+  "description": "2026-standard ultra-premium creative agency specializing in high-end design and global results.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

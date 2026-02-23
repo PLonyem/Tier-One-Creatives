@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-gold: #D4AF37;
+  --color-cyber-blue: #00D2FF;
+  --color-space-dark: #0A0A0A;
+  --color-space-light: #1A1A1A;
+
+  --animate-shimmer: shimmer 3s linear infinite;
+
+  @keyframes shimmer {
+    to {
+      background-position: 200% center;
+    }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-[#0A0A0A] to-[#1A1A1A] text-white min-h-screen selection:bg-gold/30 selection:text-gold;
+    font-family: var(--font-sans);
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/5 backdrop-blur-[20px] border border-white/10 shadow-xl;
+  }
+  
+  .glass-gold {
+    @apply bg-gold/10 backdrop-blur-[10px] border border-gold/20 shadow-lg shadow-gold/5;
+  }
+
+  .text-shimmer {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-gold to-white bg-[length:200%_auto] animate-shimmer;
+  }
+
+  .magnetic-area {
+    @apply relative flex items-center justify-center;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
